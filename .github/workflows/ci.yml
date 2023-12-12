@@ -24,11 +24,13 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-      - name: Test with iDFlakies
-        run: mvn edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
-        # run: mvn test --file pom.xml
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: ${{ github.workspace}}
+      # - name: Test with iDFlakies
+      #   run: mvn edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+      - name: Test
+        run: mvn test --file pom.xml
+
+      # - name: Upload test results
+      #   uses: actions/upload-artifact@v2
+      #   with:
+      #     name: test-results
+      #     path: ${{ github.workspace}}
