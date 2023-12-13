@@ -18,9 +18,9 @@ jobs:
         with:
           name: workspace
           path: ${{ github.workspace}}
-          
+
       - name: Test with iDFlakies
-        run: mvn edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=10 -Ddt.detector.original_order.all_must_pass=false
+        run: mvn edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=20 -Ddt.detector.original_order.all_must_pass=false
     #   - name: Test
     #     run: mvn test --file pom.xml
 
