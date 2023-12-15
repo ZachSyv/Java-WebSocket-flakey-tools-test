@@ -1,4 +1,4 @@
-name: Continuous Integration Ubuntu 22.04
+name: Continuous Integration
 
 on:
   workflow_dispatch:
@@ -15,9 +15,3 @@ jobs:
 
       - name: Test with iDFlakies
         run: mvn verify
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: test-results
-          path: ${{ github.workspace}}/.dtfixingtools/detection-results
