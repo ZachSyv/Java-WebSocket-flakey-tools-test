@@ -13,12 +13,6 @@ jobs:
           java-version: '8'
           distribution: 'temurin'
 
-      - name: Upload workspace
-        uses: actions/upload-artifact@v2
-        with:
-          name: workspace
-          path: ${{ github.workspace}}
-
       - name: Test with iDFlakies
         run: mvn edu.illinois.cs:idflakies-maven-plugin:2.0.0:detect -Ddetector.detector_type=random-class-method -Ddt.randomize.rounds=20 -Ddt.detector.original_order.all_must_pass=false
 
